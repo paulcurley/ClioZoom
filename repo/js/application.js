@@ -9,7 +9,7 @@ window.onload = function(){
   		socket.on('photos', function (data) {
 			
 			
-			var size = 0,
+			var size = 5,
 				height = data.photos.size[size].height,
 				width = data.photos.size[size].width,
 				link = document.createElement('a')
