@@ -1,8 +1,7 @@
 {
        "name": "clioZoom",
-       "version": "1.0.0",
        "scripts": {
-		"start": "node server.js"
+		"start": "node srver.js"
        },
        "dependencies": {},
 		"engine": "node 0.6.8"
