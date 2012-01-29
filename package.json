@@ -4,6 +4,5 @@
        "scripts": {
 		"start": "node server.js"
        },
-       "dependencies": {},
-		"engine": "node 0.6.8"
+       "dependencies": {}
 }
