@@ -1,5 +1,5 @@
 var FlickrAPI= require('./node_modules/flickrnode/lib/flickr').FlickrAPI,
-	sys= require('sys')
+	sys= require('util')
 	//,
 	//socket = require('./node_modules/socket.io');
 
