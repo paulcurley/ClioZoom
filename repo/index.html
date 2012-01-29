@@ -3,14 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>ClioV6</title>
-	<!--link rel="stylesheet" href="css/style.css"-->
-	<style type="text/css" media="screen">
-		body {background:#444;}
-		a { display:blockmargin:10px auto;-webkit-transition: all 10s ease-in-out; -moz-transition: all 1s ease-in-out; -o-transition: all 1s ease-in-out; -ms-transition: all 1s ease-in-out;transition: all 10s ease-in-out;}
-		a.active  {height:auto;}
-		img {margin:10px auto; border:3px solid #666;}
-		section { overflow:hidden;width:640px;margin:0 auto;}
-	</style>
+	<link rel="stylesheet" href="http://clio.dev:80/css/style.css">
 </head>
 <body>
 	<section>
@@ -19,70 +12,11 @@
 </body>
 
 <script src="/socket.io/socket.io.js"></script>
+<script src="http://clio.dev:80/js/application.js"></script>
 <script>
-	animate = function(){
-		
-		var links = document.getElementsByTagName('a')
-		
-		
-		for (var i=0; i < links.length; i++) {
-			
-			links[i].className = 'active';
-		};
-	};
-
-
-
-		var socket = io.connect(),
-			target = document.getElementsByTagName('section'),
-			targetHeight = 0;
-	  		socket.on('photos', function (data) {
-				//console.log(data.photos)
-
-				var size = 4,
-					height = data.photos.size[size].height,
-					width = data.photos.size[size].width,
-					link = document.createElement('a')
-					img = new Image();
-				
-				//console.log(target[0].style)
-				targetHeight = targetHeight +parseFloat(data.photos.size[size].height);
-				
-				link.href = data.photos.size[size].url
-				link.setAttribute('href',data.photos.size[size].url);
-				img.src = data.photos.size[size].source;
-				//console.log(img)
-
-				link.appendChild(img)
-				img.onload = function(){
-					//
-					//console.log('dsa')
-					
-					document.body.style.backgroundImage = "none"
-					target[0].appendChild(link)
-
-					setTimeout(function() {
-						link.style.opacity = 1;
-						link.style.width = width+'px';
-						link.height = height;
-						
-					}, 10);
-					
-					setTimeout(function() {
-						//target[0].style.height = targetHeight + 'px';
-						animate()
-					}, 5000);
-				}
-
-
-
-
-			  });
-
-
-
+	
 
 
 </script>
-<!--script src="js/application.js"></script-->
+
 </html>
